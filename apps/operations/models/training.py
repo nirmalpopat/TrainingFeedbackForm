@@ -26,3 +26,6 @@ class TrainingInformations(TimeStampable):
 
     def __str__(self):
         return f'{self.full_name}'
+    
+    def save(self, *args, **kwargs):
+        super(TrainingInformations, self).save(*args, **kwargs)
