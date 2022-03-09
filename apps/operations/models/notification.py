@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 # project imports
 from utils.core.models import TimeStampable
 
+
 class NotificationTemplate(TimeStampable):
     """
     Description of NotificationTemplate Model

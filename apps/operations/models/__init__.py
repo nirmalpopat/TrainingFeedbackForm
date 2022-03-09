@@ -1,2 +1,2 @@
-from .training import *
-from .notification import *
+from .training import TrainingForm
+from .notification import NotificationTemplate

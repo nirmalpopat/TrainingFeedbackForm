@@ -1,60 +1,44 @@
 from django.contrib import admin
 
 # project imports
-from apps.operations.models import TrainingInformations, NotificationTemplate
-# Register your models here.
+from apps.operations.models import TrainingForm, NotificationTemplate
 
-@admin.register(TrainingInformations)
+
+@admin.register(TrainingForm)
 class ContactModelAdmin(admin.ModelAdmin):
     list_display = (
         "id", 
         "full_name", 
         "email_id", 
         "phone_number", 
-        "intrested_in_training"
+        "interested_in_training"
     )
     
     list_filter = (
-        "id", 
-        "full_name", 
-        "email_id", 
-        "phone_number", 
-        "intrested_in_training"
+        "id",
+        "interested_in_training"
     )
     
     search_fields = (
-        "id", 
         "full_name", 
         "email_id", 
-        "phone_number", 
-        "intrested_in_training"
+        "phone_number"
     )
-    
+
+
 @admin.register(NotificationTemplate)
-class NotificationTemplatetModelAdmin(admin.ModelAdmin):
+class NotificationTemplateModelAdmin(admin.ModelAdmin):
     list_display = (
         "id", 
-        "name", 
-        "subject", 
-        "content",
-        "create_date",
-        "modified_date",
-    )
-    
-    list_filter = (
-        "id", 
-        "name", 
-        "subject", 
+        "name",
+        "subject",
         "content",
         "create_date",
         "modified_date",
     )
     
     search_fields = (
-        "id", 
         "name", 
         "subject", 
-        "content",
-        "create_date",
-        "modified_date",
+        "content"
     )
