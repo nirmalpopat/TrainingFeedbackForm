@@ -2,10 +2,12 @@ from django.contrib import admin
 
 # project imports
 from apps.operations.models import TrainingForm, NotificationTemplate
+from import_export.admin import ImportExportModelAdmin
 
+# Register your models here.
 
 @admin.register(TrainingForm)
-class ContactModelAdmin(admin.ModelAdmin):
+class ContactModelAdmin(ImportExportModelAdmin):
     list_display = (
         "id", 
         "full_name", 
@@ -40,5 +42,7 @@ class NotificationTemplateModelAdmin(admin.ModelAdmin):
     search_fields = (
         "name", 
         "subject", 
-        "content"
+        "content",
+        "phone_number", 
+        "intrested_in_training"
     )
