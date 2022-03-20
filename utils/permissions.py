@@ -14,10 +14,11 @@ class IsAuthenticatedStudent(BasePermission):
         return bool(request.user and request.user.is_authenticated and request.user.is_student)
 
 
-class IsAuthenticatedCompany(BasePermission):
+class IsAuthenticatedTeacher(BasePermission):
     """
     Allows access only to authenticated company users
     """
     def has_permission(self, request, view):
-        return bool(request.user and request.user.is_authenticated and request.user.is_company)
+        print("request>>>>>>>>>>>>>", request.user.is_teacher)
+        return bool(request.user and request.user.is_authenticated and request.user.is_teacher)
 
